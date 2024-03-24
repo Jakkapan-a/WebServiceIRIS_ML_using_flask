@@ -71,7 +71,9 @@
 
         p {
             color: #333;
+            font-size: 1.2rem;
         }
+        
     </style>
 </head>
 <body>
@@ -109,7 +111,7 @@
                 e.preventDefault();
                 document.querySelector('p').textContent = "loading...";
                 document.querySelectorAll('p')[1].textContent = "loading...";
-                await new Promise(r => setTimeout(r, 1000));
+                await new Promise(r => setTimeout(r, 500));
                 
                 const formData = new FormData(form);
                 fetch('/predict', {

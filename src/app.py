@@ -7,7 +7,11 @@ from sklearn.datasets import load_iris
 iris = load_iris()
 app = Flask(__name__)
 
-file_path = '../model/iris_classifier.joblib'
+file_path = './model/iris_classifier.joblib'
+
+# print current working directory
+import os
+print(os.getcwd())
 
 def convert_iris_to_dict(iris):
     if(not iris):
@@ -44,7 +48,7 @@ def predict():
         })
         
     except Exception as e:
-        return jsonify({'error': str(e)})
+        return jsonify({'error': str(e),'current working directory':os.getcwd()})
     return jsonify({'error': 'An error occurred'})
 
 if __name__ == '__main__':
