@@ -5,23 +5,13 @@ from sklearn.tree import DecisionTreeClassifier
 from joblib import dump, load
 from sklearn.datasets import load_iris
 iris = load_iris()
+import os
 app = Flask(__name__)
 
-file_path = './model/iris_classifier.joblib'
-
-# print current working directory
-import os
-print(os.getcwd())
-
-def convert_iris_to_dict(iris):
-    if(not iris):
-        return None
-    return {
-        'sepal_length': iris.data[0],
-        'sepal_width': iris.data[1],
-        'petal_length': iris.data[2],
-        'petal_width': iris.data[3]
-    }
+file_path = os.path.join(os.getcwd(),'model/iris_classifier.joblib')
+# Debug for run in src folder
+if(not os.path.exists(file_path)):
+    file_path = file_path.replace('src/','').replace('src\\','')
 
 @app.route('/', methods=['GET'])
 def index():
@@ -48,7 +38,7 @@ def predict():
         })
         
     except Exception as e:
-        return jsonify({'error': str(e),'current working directory':os.getcwd()})
+        return jsonify({'error': str(e)})
     return jsonify({'error': 'An error occurred'})
 
 if __name__ == '__main__':
