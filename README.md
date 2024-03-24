@@ -17,7 +17,7 @@ This is a example of using the Iris dataset with scikit-learn and using it with 
 ## How to run
 1. Clone the repository
 ```bash
-git clone
+git clone https://github.com/Jakkapan-a/WebServiceIRIS_ML_using_flask.git
 ```
 2. Install the scikit-learn and Flask
 ```bash
