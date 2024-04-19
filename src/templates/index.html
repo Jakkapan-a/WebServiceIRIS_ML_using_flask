@@ -75,6 +75,11 @@
             color: #333;
             font-size: 1.2rem;
         }
+
+        .btn {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 
@@ -94,7 +99,12 @@
             <label for="petal_width">Petal Width</label>
             <input type="number" step='0.01' placeholder='0.00' name="petal_width" id="petal_width"
                 required>
-            <button type="submit">Predict</button>
+            <div class="form-group btn">
+                <button type="submit">Predict</button>
+                <a href="/all_result">
+                    <button type="button">All Results</button>
+                </a>
+            </div>
         </form>
         <div style="margin: top 20px;">
             <div class="container">

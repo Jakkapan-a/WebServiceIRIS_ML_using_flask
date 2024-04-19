@@ -19,9 +19,9 @@ This is a example of using the Iris dataset with scikit-learn and using it with 
 ```bash
 git clone https://github.com/Jakkapan-a/WebServiceIRIS_ML_using_flask.git
 ```
-2. Install the scikit-learn and Flask
-```bash
-pip install scikit-learn Flask
+2. Install the scikit-learn , Flask and mysql-connector-python
+```bash 
+pip install scikit-learn Flask mysql-connector-python
 ```
 3. Run the train.py
 ```bash
@@ -35,3 +35,8 @@ python src/app.py
 
 <!-- img -->
 <img src="./images/01.png" alt="01" width="200"/>
+
+## Update Save result to MySQL and show in the all_result page
+
+<!-- img -->
+<img src="./images/02.png" alt="02" width="200"/>
